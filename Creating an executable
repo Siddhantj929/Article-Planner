@@ -1,0 +1,13 @@
+I used PyInstaller to create the executable.
+
+Since the PyInstaller is not fully customised for Python 3.6 yet, there needs to be one hook-file added to the module.
+
+1. Locate PyInstaller folder..\hooks, e.g. C:\Program Files\Python\Lib\site-packages\PyInstaller\hooks.
+
+2. Create file hook-pandas.py with contents: hiddenimports = ['pandas._libs.tslibs.timedeltas']
+         
+3. Save it and delete .spec file, build and dist folders just to be sure.
+
+4. Then run the command on terminal/cmd : py -m PyInstaller --onefile --windowed --noupx 'Article Planner.py'
+
+Note: I wasn't able to upload the .exe file due to some issues. That's why I added these instructions here!
